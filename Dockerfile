@@ -5,9 +5,9 @@ ENV MAILHOST      "postfix"
 ENV DAYS          "36525"
 
 ENV CONTAINERNAME "postfix"
-ADD start.sh /start.sh
 RUN apk update \
  && apk add openssl \
+ && addgroup postfix $SHARED_GROUP_NAME \
  && postconf -e 'smtpd_use_tls = yes'
 
 VOLUME /certs
