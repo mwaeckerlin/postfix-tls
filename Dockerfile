@@ -1,10 +1,9 @@
-FROM mwaeckerlin/postfix
+FROM mwaeckerlin/smtp-relay
 MAINTAINER mwaeckerlin
 
-ENV MAILHOST      "postfix"
 ENV DAYS          "36525"
 
-ENV CONTAINERNAME "postfix"
+ENV CONTAINERNAME "smtp-relay-tls"
 RUN apk update \
  && apk add openssl \
  && addgroup postfix $SHARED_GROUP_NAME \
