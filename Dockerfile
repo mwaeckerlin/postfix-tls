@@ -9,4 +9,5 @@ RUN apk update \
  && addgroup postfix $SHARED_GROUP_NAME \
  && postconf -e 'smtpd_use_tls = yes'
 
-VOLUME /certs
+VOLUME /etc/letsencrypt
+

@@ -1,6 +1,6 @@
 #!/bin/sh -ex
 
-certdir=/certs/${MAILHOST}
+certdir=/etc/letsencrypt/live/${MAILHOST}
 privkey=${certdir}/privkey.pem
 fullchain=${certdir}/fullchain.pem
 
