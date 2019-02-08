@@ -10,3 +10,6 @@ RUN apk add --no-cache --purge --clean-protected -u openssl \
 
 VOLUME /etc/letsencrypt
 
+# definitions for our children
+ONBUILD RUN mv start.sh start-postfix-tls.sh
+ONBUILD ADD start.sh /start.sh
